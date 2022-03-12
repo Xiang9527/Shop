@@ -113,7 +113,7 @@ export default {
 <template>
   <b-container>
     <b-row class="rowMargin">
-      <b-col cols="8">
+      <b-col xl="8" class="caroselLeftCol">
         <b-carousel
           class="caroselLeft"
           v-model="slide"
@@ -135,7 +135,7 @@ export default {
           </b-carousel-slide>
         </b-carousel>
       </b-col>
-      <b-col cols="4">
+      <b-col cols="12" xl="4">
         <b-row>
           <b-col class="caroselRightCol" cols="12">
             <b-img class="caroselRight" :src="carouselRightPictures[0]"></b-img>
@@ -153,7 +153,8 @@ export default {
             <b-card-text>
               <b-row>
                 <b-col 
-                cols="2" 
+                cols="4"
+                xl="2" 
                 v-for="type in types" :key="type.Type">
                   <b-card 
                   img-alt="Card image" 
@@ -278,5 +279,16 @@ export default {
   overflow: hidden;
   -webkit-line-clamp:5;
   -webkit-box-orient: vertical;
+}
+
+@media (max-width: 1199px) {
+  .caroselLeftCol {
+    display: none;
+  }
+
+  .caroselRight {
+    width: 100%;
+    height: 100%;
+  }
 }
 </style>

@@ -60,38 +60,38 @@
 </script>
 
 <template>
-  <div class="shoppingCartDiv" :data-count="productLength">
-    <b-popover target="shoppingCart" triggers="hover" placement="bottom">
-      <template v-if="products.length > 0 && $root.$refs.login.CheckLogin()">
-        <div v-for="product in products" :key="product.ID" class="productFlex">
-          <nuxt-link :to="'/product/' + product.ID" class="productBackground userDropdown productFlex productLink">
-            <div class="imageDiv ml-1">
-              <b-card-img
-              :src="product.Image"
-              ></b-card-img>
+    <div class="shoppingCartDiv" :data-count="productLength">
+      <b-popover target="shoppingCart" triggers="hover" placement="bottom">
+        <template v-if="products.length > 0 && $root.$refs.login.CheckLogin()">
+          <div v-for="product in products" :key="product.ID" class="productFlex">
+            <nuxt-link :to="'/product/' + product.ID" class="productBackground userDropdown productFlex productLink">
+              <div class="imageDiv ml-1">
+                <b-card-img
+                :src="product.Image"
+                ></b-card-img>
+              </div>
+              <div class="productName ml-1">
+                {{product.ProductName}}
+              </div>
+              <div class="ml-2">
+                ${{ $common.MoneyFormatter(product.MarketPrice) }}
+              </div>
+            </nuxt-link>
+            <div class="trashIcon ml-3">
+              <b-icon variant="secondary" icon="trash-fill" @click="RemoveItem(product.ID)"></b-icon>
             </div>
-            <div class="productName ml-1">
-              {{product.ProductName}}
-            </div>
-            <div class="ml-2">
-              ${{ $common.MoneyFormatter(product.MarketPrice) }}
-            </div>
-          </nuxt-link>
-          <div class="trashIcon ml-3">
-            <b-icon variant="secondary" icon="trash-fill" @click="RemoveItem(product.ID)"></b-icon>
           </div>
-        </div>
-      </template>
-      <template v-else>
-        <div class="emptyProduct">
-          尚無商品
-        </div>
-      </template>
-    </b-popover>
-  </div>
+        </template>
+        <template v-else>
+          <div class="emptyProduct">
+            尚無商品
+          </div>
+        </template>
+      </b-popover>
+    </div>
 </template>
 
-<style scope>
+<style scoped>
   .emptyProduct{
     display: flex;
     justify-content: center;
@@ -141,8 +141,8 @@
     content: attr(data-count);
     color: rgb(224, 98, 14);
     position: relative;
-    left:-10px;
-    top: -10px;
+    right: -20px;
+    bottom: 35px;
     background-color: #fff;
     border-radius: 2.75rem;
     width: 20px;

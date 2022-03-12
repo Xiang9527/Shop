@@ -3,7 +3,6 @@ import Vue from "vue";
 import * as common from "../assets/common.js";
 import Header from "../components/Header.vue";
 import LoginDialog from "../components/LoginDialog.vue";
-import ShoppingCart from "../components/ShoppingCart.vue";
 Vue.prototype.$common = common;
 Vue.use(require('vue-moment'));
 
@@ -13,8 +12,7 @@ export default{
   },
   components:{
     Header,
-    LoginDialog,
-    ShoppingCart
+    LoginDialog
   }
 }
 </script>
