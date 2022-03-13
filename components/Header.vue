@@ -58,14 +58,13 @@ export default {
               <b-button size="sm" class="my-2 my-sm-0" variant="info" type="submit"
                 ><b-icon icon="search" variant="white"></b-icon
               ></b-button>
-              <div>
-                <b-icon id="shoppingCart" variant="info" icon="cart-fill" class="shoppingCart"></b-icon>
-                <ShoppingCart ref="shoppingCart"/>
-              </div>
             </b-nav-form>
           </b-navbar-nav>
-          
         </b-collapse>
+        <div id="ShoppingCartDiv">
+            <b-icon id="shoppingCart" variant="info" icon="cart-fill" class="shoppingCart"></b-icon>
+            <ShoppingCart ref="shoppingCart"/>
+          </div>
       </b-navbar>
     </b-container>
   </div>
@@ -105,6 +104,13 @@ export default {
     font-size: 2rem;
     cursor: pointer;
   }
+  .form-inline{
+    flex-wrap: nowrap;
+  }
+  #ShoppingCartDiv{
+    display: inline-block;
+  }
+
 
   @media (max-width: 1199px) {
     .searchInput {

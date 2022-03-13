@@ -180,7 +180,8 @@ export default {
         </b-col>
       </b-container>
     </b-row>
-    <b-row>
+    <keep-alive>
+      <b-row>
       <b-container>
         <b-col cols="12" no-gutters="true">
           <b-card :header="currentType" header-tag="header">
@@ -235,6 +236,8 @@ export default {
         </b-col>
       </b-container>
     </b-row>
+    </keep-alive>
+    
   </b-container>
 </template>
 

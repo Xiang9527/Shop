@@ -231,11 +231,11 @@ export default {
       </b-col>
     </b-row>
     <b-row class="mt-5">
-        <b-col cols="12" sm="12" class="pl-0">
-          <div :class="$style.productDescription"><h3>商品詳情</h3></div>
-          <div v-html="Product.Description"></div>
-        </b-col>
-      </b-row>
+      <b-col cols="12" sm="12" class="pl-0">
+        <div :class="$style.productDescription"><h3>商品詳情</h3></div>
+        <div v-html="Product.Description"></div>
+      </b-col>
+    </b-row>
   </b-container>
 </template>
 
